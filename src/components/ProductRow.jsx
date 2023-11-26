@@ -1,9 +1,9 @@
-function ProductRow({ productsData, searchInputText, isChecked }) {
+function ProductRow({ productsData, searchInput, isCheckboxChecked }) {
   const filteredProducts = productsData.filter((product) => {
     const nameMatches = product.name
       .toLowerCase()
-      .startsWith(searchInputText.toLowerCase());
-    const checkboxMatches = isChecked ? product.inStock : true;
+      .startsWith(searchInput.toLowerCase());
+    const checkboxMatches = isCheckboxChecked ? product.inStock : true;
     return nameMatches && checkboxMatches;
   });
 

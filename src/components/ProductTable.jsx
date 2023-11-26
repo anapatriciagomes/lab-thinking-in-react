@@ -1,6 +1,6 @@
 import ProductRow from './ProductRow';
 
-function ProductTable({ productsData, searchInputText, isChecked }) {
+function ProductTable({ productsData, searchInput, isCheckboxChecked }) {
   return (
     <table>
       <thead>
@@ -11,8 +11,8 @@ function ProductTable({ productsData, searchInputText, isChecked }) {
       </thead>
       <ProductRow
         productsData={productsData}
-        searchInputText={searchInputText}
-        isChecked={isChecked}
+        searchInput={searchInput}
+        isCheckboxChecked={isCheckboxChecked}
       />
     </table>
   );

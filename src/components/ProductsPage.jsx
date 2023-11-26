@@ -4,28 +4,30 @@ import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 
 function ProductsPage() {
-  const [searchInputText, setSearchInputText] = useState('');
-  const [isChecked, setIsChecked] = useState(false);
+  const [searchInput, setSearchInput] = useState('');
+  const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
 
-  const handleSearchInputChange = (inputText, checkboxValue) => {
-    setSearchInputText(inputText);
+  const handleSearch = (inputText) => {
+    setSearchInput(inputText);
   };
 
-  const handleCheckboxFilter = (inputText, checkboxValue) => {
-    setIsChecked(checkboxValue);
+  const handleCheckboxChange = (isChecked) => {
+    setIsCheckboxChecked(isChecked);
   };
 
   return (
     <div>
       <h1>IronStore</h1>
       <SearchBar
-        handleSearchInputChange={handleSearchInputChange}
-        handleCheckboxFilter={handleCheckboxFilter}
+        searchInput={searchInput}
+        isCheckboxChecked={isCheckboxChecked}
+        onSearch={handleSearch}
+        onCheckboxChange={handleCheckboxChange}
       />
       <ProductTable
         productsData={productsData}
-        searchInputText={searchInputText}
-        isChecked={isChecked}
+        searchInput={searchInput}
+        isCheckboxChecked={isCheckboxChecked}
       />
     </div>
   );
